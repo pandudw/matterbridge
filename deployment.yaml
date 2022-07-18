@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  matterbridge
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: matterbridge
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  matterbridge
+    spec:
+      containers:
+      - name:  matterbridge
+        image: 42wim/matterbridge:stable
+        volumeMounts:
+        - name: conf
+          mountPath: /etc/matterbridge
+      volumes:
+        - name: conf
+          configMap:
+            name: matterbridge #nama configmap
+            items:
+              - key: matterbridge.toml #nama file conf
+                path: matterbridge.toml
