@@ -1,0 +1,29 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: matterbridge
+  namespace: default
+data:
+  matterbridge.toml: |
+    [slack]
+    [slack.bot]
+    Token=" "
+    PrefixMessagesWithNick=true
+    [discord]
+    [discord.bot]
+    Token=" "
+    Server="pandu-server"
+    RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
+    PreserveThreading=true
+    [general]
+    RemoteNickFormat="[{PROTOCOL}/{BRIDGE}] <{NICK}> "
+
+    [[gateway]]
+    name = "mygateway"
+    enable=true
+    [[gateway.inout]]
+    account = "discord.bot"
+    channel="general"
+    [[gateway.inout]]
+    account ="slack.bot"
+    channel = "general"
