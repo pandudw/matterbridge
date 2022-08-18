@@ -1,3 +1,4 @@
 # Matterbridge 
-Matterbridge is a bridge between a series of chat protocols and offers a REST-API  
-In this repository contains configuration to bridge slack bot and discord bot.  
+Matterbridge is an open source program that allow for cross-platform communication.
+This repository will offer instructions on how to configure Matterbridge for cross-platform communication between slack and discord
+The original repository may be found here: https://github.com/42wim/matterbridge
