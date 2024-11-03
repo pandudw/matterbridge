@@ -22,7 +22,7 @@ spec:
       volumes:
         - name: conf
           configMap:
-            name: matterbridge #nama configmap
+            name: matterbridge
             items:
-              - key: matterbridge.toml #nama file conf
+              - key: matterbridge.toml
                 path: matterbridge.toml
